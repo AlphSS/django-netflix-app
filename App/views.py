@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .movies import movies_data
+from .models import Movie
 
 # Create your views here.
 def home(request):
-    movies = movies_data
+    movies = Movie.objects.all()
     return render(request, 'home.html', {'movies': movies})
